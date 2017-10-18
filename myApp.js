@@ -8,9 +8,15 @@ var app = angular.module("loveCalc",[]);
 					console.log(url); 
                     $http.get(url, {headers: {'X-Mashape-Key' : 'IuxvfEDS1hmsh76W0o1MUGx80TAqp1PjolSjsnBqVhQyZMRVmI'}}).then(function (response) {
                         console.log(response); 
-                        $scope.fname = response.data.fname;
-                        $scope.sname = response.data.sname;
-                        $scope.percentage = response.data.percentage;
+                        $scope.fname = response.data.fname.toUpperCase();
+                        $scope.sname = response.data.sname.toUpperCase();
+                        $scope.percentage = "Compatability: "+response.data.percentage+ " %";
+                        console.log(response.data.percentage);
+                        if(parseInt(response.data.percentage) > 50){
+                        	$scope.status = "loves";
+                        } else{
+                        	$scope.status = "doesn't love";
+                        }
                         $scope.result = response.data.result;
                     });
 					$scope.inputPerson1 = '';

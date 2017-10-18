@@ -27,10 +27,10 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: white;
 }
 body {
-  color: #fff;
+  color: #ff3399;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
@@ -157,4 +157,9 @@ body {
   .cover-container {
     width: 42rem;
   }
+}
+
+.btn-default {
+    background: #ff3399;
+    color: #ffffff;
 }

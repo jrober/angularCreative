@@ -30,10 +30,7 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Cupid Simulator</h3>
-              <nav class="nav nav-masthead">
-                <a class="nav-link active" href="#">Home</a>
-              </nav>
+              <h2 class="masthead-brand">Cupid Simulator</h2>
             </div>
           </div>
 
@@ -56,13 +53,26 @@
 				</form>
 			</div>
 			<div class="row">
-				<div class="result">
+				<div class="col-lg-12" style="margin-top: 80px">
+					<h3 style="text-align: center">
+						{{fname}}     {{status}}       {{sname}} 
+					</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
 					<p>
-						{{fname}} , {{sname}}, {{percentage}}, {{result}}
+						{{percentage}}
 					</p>
 				</div>
-					
-				
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						{{result}}
+					</p>
+				</div>
 			</div>
           </div>
 
