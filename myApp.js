@@ -8,6 +8,10 @@ var app = angular.module("loveCalc",[]);
 					console.log(url); 
                     $http.get(url, {headers: {'X-Mashape-Key' : 'IuxvfEDS1hmsh76W0o1MUGx80TAqp1PjolSjsnBqVhQyZMRVmI'}}).then(function (response) {
                         console.log(response); 
+                        $scope.fname = response.data.fname;
+                        $scope.sname = response.data.sname;
+                        $scope.percentage = response.data.percentage;
+                        $scope.result = response.data.result;
                     });
 					$scope.inputPerson1 = '';
 					$scope.inputPerson2 = '';
