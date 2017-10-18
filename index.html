@@ -15,7 +15,7 @@
         <link href="cover.css" rel="stylesheet">
 	</head>
 
-	<body ng-app="famHist" ng-controller="famHistCtrl">
+	<body ng-app="loveCalc" ng-controller="loveCalcCtrl">
 
 	 <div class="site-wrapper">
 
@@ -25,7 +25,7 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Family History</h3>
+              <h3 class="masthead-brand">Cupid Simulator</h3>
               <nav class="nav nav-masthead">
                 <a class="nav-link active" href="#">Home</a>
               </nav>
@@ -34,35 +34,30 @@
 
           <div class="container">
           	<div class="row">
-          		<form class="form-inline" ng-submit="famHistAdd()">
+          		<form class="form-inline" ng-submit="submit()">
 				  
 				  <div class="form-group">
-				    <label for="Person">Add Person:</label>
-				    <input type="text" ng-model="inputPerson" class="form-control" id="Person">
+				    <label for="Person1">Person 1:</label>
+				    <input type="text" ng-model="inputPerson1" class="form-control" id="Person1">
 				  </div>
 
 				  <div class="form-group">
-				    <label for="Father">Add Father:</label>
-				    <input type="text" ng-model="inputFather" class="form-control" id="Father">
+				    <label for="Person2">Person 2:</label>
+				    <input type="text" ng-model="inputPerson2" class="form-control" id="Person2">
 				  </div>
 
-				  <div class="form-group">
-				    <label for="Mother">Add Mother:</label>
-				    <input type="text" ng-model="inputMother" class="form-control" id="Mother">
-				  </div>
-
-				  <button type="submit" class="btn btn-default">Add New</button>
+				  <button type="submit" class="btn btn-default">Calculate</button>
 				
 				</form>
 			</div>
 			<div class="row">
-				<p>
-					<div ng-repeat="x in famHistList">
-						<input type="checkbox" ng-model="x.done">
-						{{x.famHistPerson}}, {{x.famHistFather}}, {{x.famHistMother}}
-					</div>
-					<button ng-click="remove()"> Remove Checked Items</button>
-				</p>
+				<div ng-repeat="x in famHistList">
+					<p>
+						{{result}}
+					</p>
+				</div>
+					
+				
 			</div>
           </div>
 
