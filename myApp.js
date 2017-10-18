@@ -1,27 +1,16 @@
-var app = angular.module("famHist",[]);
-			app.controller('famHistCtrl',function($scope){
+var app = angular.module("loveCalc",[]);
+			app.controller('loveCalcCtrl',function($scope, $http){
 				$scope.famHistList = [];
-				$scope.remove = function(){
-					var oldlist = $scope.famHistList;
-					$scope.famHistList = [];
-					angular.forEach(oldlist,function(x){
-						if(!x.done){
-							$scope.famHistList.push(x);
-						}
-					});
-				}
-				$scope.famHistAdd = function() {
-					var famObject = {
-						famHistPerson: $scope.inputPerson,
-						famHistFather: $scope.inputFather,
-						famHistMother: $scope.inputMother,
-						done:false
-					}
-					console.log(famObject);
-					$scope.famHistList.push(famObject);
-					$scope.inputPerson = '';
-					$scope.inputFather = '';
-					$scope.inputMother = '';
+				$scope.submit = function() {
+					var person1 = $scope.inputPerson1;
+					var person2 = $scope.inputPerson2;
+					var url = "https://love-calculator.p.mashape.com/getPercentage?fname="+person1+"&sname="+person2;
+					console.log(url); 
+                    $http.get(url, {headers: {'X-Mashape-Key' : 'IuxvfEDS1hmsh76W0o1MUGx80TAqp1PjolSjsnBqVhQyZMRVmI'}}).then(function (response) {
+                        console.log(response); 
+                    });
+					$scope.inputPerson1 = '';
+					$scope.inputPerson2 = '';
 				}
 
 
